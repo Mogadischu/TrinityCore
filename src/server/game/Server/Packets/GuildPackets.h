@@ -107,10 +107,10 @@ namespace WorldPackets
             int32 GuildReputation = 0;
             int32 GuildRepToCap = 0;
             float LastSave = 0.0f;
-            std::string Name = "";
+            std::string Name;
             uint32 VirtualRealmAddress = 0;
-            std::string Note = "";
-            std::string OfficerNote = "";
+            std::string Note;
+            std::string OfficerNote;
             uint8 Status = 0;
             uint8 Level = 0;
             uint8 ClassID = 0;
@@ -128,8 +128,8 @@ namespace WorldPackets
             WorldPacket const* Write() override;
 
             std::vector<GuildRosterMemberData> MemberData;
-            std::string WelcomeText = "";
-            std::string InfoText = "";
+            std::string WelcomeText;
+            std::string InfoText;
             uint32 CreateDate = 0;
             int32 NumAccounts = 0;
             int32 GuildFlags = 0;
@@ -152,7 +152,7 @@ namespace WorldPackets
 
             void Read() override;
 
-            std::string MotdText = "";
+            std::string MotdText;
         };
 
         class GuildCommandResult final : public ServerPacket
@@ -162,7 +162,7 @@ namespace WorldPackets
 
             WorldPacket const* Write() override;
 
-            std::string Name = "";
+            std::string Name;
             int32 Result = 0;
             int32 Command = 0;
         };
@@ -200,7 +200,7 @@ namespace WorldPackets
 
             void Read() override;
 
-            std::string Name = "";
+            std::string Name;
         };
 
         class GuildInvite final : public ServerPacket
@@ -221,9 +221,9 @@ namespace WorldPackets
             uint32 GuildVirtualRealmAddress = 0;
             uint32 OldGuildVirtualRealmAddress = 0;
             uint32 InviterVirtualRealmAddress = 0;
-            std::string InviterName = "";
-            std::string GuildName = "";
-            std::string OldGuildName = "";
+            std::string InviterName;
+            std::string GuildName;
+            std::string OldGuildName;
         };
 
         class GuildEventPresenceChange final : public ServerPacket
@@ -235,7 +235,7 @@ namespace WorldPackets
 
             ObjectGuid Guid;
             uint32 VirtualRealmAddress = 0;
-            std::string Name = "";
+            std::string Name;
             bool Mobile = false;
             bool LoggedOn = false;
         };
@@ -247,7 +247,7 @@ namespace WorldPackets
 
             WorldPacket const* Write() override;
 
-            std::string MotdText = "";
+            std::string MotdText;
         };
 
         class GuildEventPlayerJoined final : public ServerPacket
@@ -258,7 +258,7 @@ namespace WorldPackets
             WorldPacket const* Write() override;
 
             ObjectGuid Guid;
-            std::string Name = "";
+            std::string Name;
             uint32 VirtualRealmAddress = 0;
         };
 
@@ -333,10 +333,10 @@ namespace WorldPackets
             WorldPacket const* Write() override;
 
             ObjectGuid LeaverGUID;
-            std::string LeaverName = "";
+            std::string LeaverName;
             uint32 LeaverVirtualRealmAddress = 0;
             ObjectGuid RemoverGUID;
-            std::string RemoverName = "";
+            std::string RemoverName;
             uint32 RemoverVirtualRealmAddress = 0;
             bool Removed = false;
         };
@@ -349,10 +349,10 @@ namespace WorldPackets
             WorldPacket const* Write() override;
 
             ObjectGuid NewLeaderGUID;
-            std::string NewLeaderName = "";
+            std::string NewLeaderName;
             uint32 NewLeaderVirtualRealmAddress = 0;
             ObjectGuid OldLeaderGUID;
-            std::string OldLeaderName = "";
+            std::string OldLeaderName;
             uint32 OldLeaderVirtualRealmAddress = 0;
             bool SelfPromoted = false;
         };
@@ -372,8 +372,8 @@ namespace WorldPackets
 
             WorldPacket const* Write() override;
 
-            std::string Icon = "";
-            std::string Name = "";
+            std::string Icon;
+            std::string Name;
             int32 Tab = 0;
         };
 
@@ -437,7 +437,7 @@ namespace WorldPackets
             uint32 OldFlags = 0;
             int32 TabFlags[GUILD_BANK_MAX_TABS];
             int32 TabWithdrawItemLimit[GUILD_BANK_MAX_TABS];
-            std::string RankName = "";
+            std::string RankName;
         };
 
         class GuildAddRank final : public ClientPacket
@@ -447,7 +447,7 @@ namespace WorldPackets
 
             void Read() override;
 
-            std::string Name = "";
+            std::string Name;
             int32 RankOrder = 0;
         };
 
@@ -488,7 +488,7 @@ namespace WorldPackets
             uint32 RankOrder = 0;
             uint32 Flags = 0;
             uint32 WithdrawGoldLimit = 0;
-            std::string RankName = "";
+            std::string RankName;
             uint32 TabFlags[GUILD_BANK_MAX_TABS];
             uint32 TabWithdrawItemLimit[GUILD_BANK_MAX_TABS];
         };
@@ -534,7 +534,7 @@ namespace WorldPackets
 
             void Read() override;
 
-            std::string InfoText = "";
+            std::string InfoText;
         };
 
         class GuildSetMemberNote final : public ClientPacket
@@ -546,7 +546,7 @@ namespace WorldPackets
 
             ObjectGuid NoteeGUID;
             bool IsPublic = false;          ///< 0 == Officer, 1 == Public
-            std::string Note = "";
+            std::string Note;
         };
 
         class GuildMemberUpdateNote final : public ServerPacket
@@ -558,7 +558,7 @@ namespace WorldPackets
 
             ObjectGuid Member;
             bool IsPublic = false;          ///< 0 == Officer, 1 == Public
-            std::string Note = "";
+            std::string Note;
         };
 
         class GuildMemberDailyReset final : public ServerPacket
@@ -622,7 +622,7 @@ namespace WorldPackets
 
             void Read() override;
 
-            std::string NewName = "";
+            std::string NewName;
         };
 
         class GuildFlaggedForRename final : public ServerPacket
@@ -720,8 +720,8 @@ namespace WorldPackets
 
             ObjectGuid Banker;
             uint8 BankTab = 0;
-            std::string Name = "";
-            std::string Icon = "";
+            std::string Name;
+            std::string Icon;
         };
 
         class GuildBankDepositMoney final : public ClientPacket
@@ -799,8 +799,8 @@ namespace WorldPackets
         struct GuildBankTabInfo
         {
             int32 TabIndex = 0;
-            std::string Name = "";
-            std::string Icon = "";
+            std::string Name;
+            std::string Icon;
         };
 
         class GuildBankQueryResults final : public ServerPacket
@@ -892,7 +892,7 @@ namespace WorldPackets
             WorldPacket const* Write() override;
 
             int32 Tab = 0;
-            std::string Text = "";
+            std::string Text;
         };
 
         class GuildBankSetTabText final : public ClientPacket
@@ -903,7 +903,7 @@ namespace WorldPackets
             void Read() override;
 
             int32 Tab = 0;
-            std::string TabText = "";
+            std::string TabText;
         };
 
         class GuildQueryNews final : public ClientPacket
@@ -957,7 +957,7 @@ namespace WorldPackets
 
             void Read() override;
 
-            std::string NewMasterName = "";
+            std::string NewMasterName;
         };
 
         class GuildChallengeUpdateRequest final : public ClientPacket
