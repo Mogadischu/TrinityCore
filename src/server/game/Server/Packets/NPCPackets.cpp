@@ -125,3 +125,10 @@ WorldPacket const* WorldPackets::NPC::ShowBank::Write()
 
     return &_worldPacket;
 }
+
+WorldPacket const* WorldPackets::NPC::PlayerTabardVendorActivate::Write()
+{
+    _worldPacket << Vendor;
+
+    return &_worldPacket;
+}
