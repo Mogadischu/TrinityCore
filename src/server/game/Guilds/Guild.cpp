@@ -1281,7 +1281,7 @@ void Guild::HandleRoster(WorldSession* session)
         memberData.AreaID = int32(member->GetZoneId());
         memberData.PersonalAchievementPoints = int32(member->GetAchievementPoints());
         memberData.GuildReputation = int32(member->GetTotalReputation());
-        //memberData.LastSave = 
+        memberData.LastSave = float(member->IsOnline() ? 0.0f : float(::time(NULL) - member->GetLogoutTime()) / DAY);
 
         //GuildRosterProfessionData
 
@@ -2555,7 +2555,7 @@ bool Guild::AddMember(ObjectGuid guid, uint8 rankId)
 
     // Remove all player signs from another petitions
     // This will be prevent attempt to join many guilds and corrupt guild data integrity
-    Player::RemovePetitionsAndSigns(guid, GUILD_CHARTER_TYPE);
+    Player::RemovePetitionsAndSigns(guid);
 
     ObjectGuid::LowType lowguid = guid.GetCounter();
 

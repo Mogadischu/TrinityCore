@@ -1392,7 +1392,7 @@ uint32 WorldSession::DosProtection::GetMaxPacketCounterAllowed(uint16 opcode) co
         //case CMSG_ARENA_TEAM_LEADER:                    // not profiled
         case CMSG_LOOT_METHOD:                          // not profiled
         case CMSG_GUILD_INVITE_BY_NAME:                 // not profiled
-        case CMSG_GUILD_ACCEPT_INVITE:                  // not profiled
+        case CMSG_ACCEPT_GUILD_INVITE:                  // not profiled
         case CMSG_GUILD_DECLINE_INVITATION:             // not profiled
         case CMSG_GUILD_LEAVE:                          // not profiled
         case CMSG_GUILD_DELETE:                         // not profiled

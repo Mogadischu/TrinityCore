@@ -310,7 +310,6 @@ enum OpcodeClient : uint32
     CMSG_GROUP_SET_LEADER                             = 0xBADD,
     CMSG_GROUP_SET_ROLES                              = 0xBADD,
     CMSG_GROUP_SWAP_SUB_GROUP                         = 0xBADD,
-    CMSG_GUILD_ACCEPT_INVITE                          = 0x0384,
     CMSG_GUILD_ADD_BATTLENET_FRIEND                   = 0x1437,
     CMSG_GUILD_ADD_RANK                               = 0x1630,
     CMSG_GUILD_ASSIGN_MEMBER_RANK                     = 0x0436,
@@ -528,11 +527,9 @@ enum OpcodeClient : uint32
     CMSG_PARTY_UNINVITE                               = 0x1982,
     CMSG_PARTY_UNSILENCE                              = 0xBADD,
     CMSG_PETITION_BUY                                 = 0x0010,
-    CMSG_PETITION_QUERY                               = 0xBADD,
     CMSG_PETITION_RENAME_GUILD                        = 0x0920,
     CMSG_PETITION_SHOW_LIST                           = 0x000F,
     CMSG_PETITION_SHOW_SIGNATURES                     = 0x0BC4,
-    CMSG_PETITION_SIGN                                = 0xBADD,
     CMSG_PET_ABANDON                                  = 0x0005,
     CMSG_PET_ACTION                                   = 0x133A,
     CMSG_PET_BATTLE_FINAL_NOTIF                       = 0x0565,
@@ -786,7 +783,6 @@ enum OpcodeClient : uint32
     MSG_MOVE_UPDATE_MOUSE                             = 0xBADD,
     MSG_NOTIFY_PARTY_SQUELCH                          = 0xBADD,
     MSG_PARTY_ASSIGNMENT                              = 0xBADD,
-    MSG_PETITION_RENAME                               = 0xBADD,
     MSG_RAID_TARGET_UPDATE                            = 0xBADD
 };
 
@@ -1456,8 +1452,7 @@ enum OpcodeServer : uint32
     SMSG_PERIODICAURALOG                              = 0x0B1B,
     SMSG_PETGODMODE                                   = 0xBADD,
     SMSG_PETITION_ALREADY_SIGNED                      = 0x0D8E,
-    SMSG_PETITION_RENAME_GUILD_RESULT                 = 0x1055,
-    SMSG_PETITION_SHOWLIST                            = 0xBADD,
+    SMSG_PETITION_RENAME_GUILD_RESPONSE               = 0x1055,
     SMSG_PETITION_SHOW_LIST                           = 0x0915,
     SMSG_PETITION_SHOW_SIGNATURES                     = 0x0830,
     SMSG_PETITION_SIGN_RESULTS                        = 0x11E9,

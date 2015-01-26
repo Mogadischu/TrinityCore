@@ -253,6 +253,19 @@ namespace WorldPackets
         class Hello;
     }
 
+    namespace Petition
+    {
+        class DeclinePetition;
+        class OfferPetition;
+        class PetitionBuy;
+        class PetitionRenameGuild;
+        class PetitionShowList;
+        class PetitionShowSignatures;
+        class QueryPetition;
+        class SignPetition;
+        class TurnInPetition;
+    }
+
     namespace Query
     {
         class QueryCreature;
@@ -841,14 +854,14 @@ class WorldSession
         void HandlePartyAssignmentOpcode(WorldPacket& recvData);
         void HandleRolePollBeginOpcode(WorldPacket& recvData);
 
-        void HandlePetitionBuyOpcode(WorldPacket& recvData);
-        void HandlePetitionShowSignOpcode(WorldPacket& recvData);
-        void HandlePetitionQueryOpcode(WorldPacket& recvData);
-        void HandlePetitionRenameOpcode(WorldPacket& recvData);
-        void HandlePetitionSignOpcode(WorldPacket& recvData);
-        void HandlePetitionDeclineOpcode(WorldPacket& recvData);
-        void HandleOfferPetitionOpcode(WorldPacket& recvData);
-        void HandleTurnInPetitionOpcode(WorldPacket& recvData);
+        void HandleDeclinePetition(WorldPackets::Petition::DeclinePetition& packet);
+        void HandleOfferPetition(WorldPackets::Petition::OfferPetition& packet);
+        void HandlePetitionBuy(WorldPackets::Petition::PetitionBuy& packet);
+        void HandlePetitionShowSignatures(WorldPackets::Petition::PetitionShowSignatures& packet);
+        void HandleQueryPetition(WorldPackets::Petition::QueryPetition& packet);
+        void HandlePetitionRenameGuild(WorldPackets::Petition::PetitionRenameGuild& packet);
+        void HandleSignPetition(WorldPackets::Petition::SignPetition& packet);
+        void HandleTurnInPetition(WorldPackets::Petition::TurnInPetition& packet);
 
         void HandleGuildQueryOpcode(WorldPackets::Guild::QueryGuildInfo& query);
         void HandleGuildInviteByName(WorldPackets::Guild::GuildInviteByName& packet);
@@ -900,7 +913,7 @@ class WorldSession
         void HandleBuyBankSlotOpcode(WorldPacket& recvPacket);
         void HandleTrainerListOpcode(WorldPackets::NPC::Hello& packet);
         void HandleTrainerBuySpellOpcode(WorldPacket& recvPacket);
-        void HandlePetitionShowListOpcode(WorldPacket& recvPacket);
+        void HandlePetitionShowList(WorldPackets::Petition::PetitionShowList& packet);
         void HandleGossipHelloOpcode(WorldPackets::NPC::Hello& packet);
         void HandleGossipSelectOptionOpcode(WorldPacket& recvPacket);
         void HandleSpiritHealerActivateOpcode(WorldPacket& recvPacket);

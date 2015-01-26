@@ -66,7 +66,7 @@ void WorldSession::HandleGuildOfficerRemoveMember(WorldPackets::Guild::GuildOffi
 
 void WorldSession::HandleGuildAcceptInvite(WorldPackets::Guild::AcceptGuildInvite& /*invite*/)
 {
-    TC_LOG_DEBUG("guild", "CMSG_GUILD_ACCEPT_INVITE [%s]", GetPlayerInfo().c_str());
+    TC_LOG_DEBUG("guild", "CMSG_ACCEPT_GUILD_INVITE [%s]", GetPlayerInfo().c_str());
 
     if (!GetPlayer()->GetGuildId())
         if (Guild* guild = sGuildMgr->GetGuildById(GetPlayer()->GetGuildIdInvited()))

@@ -170,7 +170,7 @@ namespace WorldPackets
         class AcceptGuildInvite final : public ClientPacket
         {
         public:
-            AcceptGuildInvite(WorldPacket&& packet) : ClientPacket(CMSG_GUILD_ACCEPT_INVITE, std::move(packet)) { }
+            AcceptGuildInvite(WorldPacket&& packet) : ClientPacket(CMSG_ACCEPT_GUILD_INVITE, std::move(packet)) { }
 
             void Read() override { }
         };
